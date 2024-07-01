@@ -17,8 +17,9 @@ module deployer::random {
 
         let cursor = 0u64;
         let i = 0u64;
-        while (cursor < random_value) {
+        loop {
             cursor = cursor + *vector::borrow<u64>(&weights, i);
+            if (cursor >= random_value) break;
             i = i + 1;
         };
 
