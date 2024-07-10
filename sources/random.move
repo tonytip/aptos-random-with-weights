@@ -13,7 +13,7 @@ module deployer::random {
             total_weights = total_weights + value;
         });
 
-        let random_value = randomness::u64_range(1, total_weights);
+        let random_value = randomness::u64_range(1, total_weights + 1);
 
         let cursor = 0u64;
         let i = 0u64;
